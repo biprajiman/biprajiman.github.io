@@ -1,0 +1,1723 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title>cPanel X</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="stylesheet" href="cPanel%20X_files/combined_optimized.css">
+<link rel="stylesheet" href="cPanel%20X_files/tree_styles2_optimized.css">
+
+<link href="cPanel%20X_files/local.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="cPanel%20X_files/utilities_container.js"></script>
+<script type="text/javascript" src="cPanel%20X_files/cpanel-all-en.js"></script>
+<script type="text/javascript" src="cPanel%20X_files/cpanel-all-min.js"></script>
+<script type="text/javascript" src="cPanel%20X_files/filemanager_editors-en.js"></script>
+<script type="text/javascript" src="cPanel%20X_files/filemanager_editors_optimized.js"></script>
+
+<link rel="stylesheet" type="text/css" href="cPanel%20X_files/ajaxapp-min.css">
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="/cPanel_magic_revision_1338669261/cjt/css/ajaxapp_ie6.css" />
+<![endif]-->
+
+
+<style type="text/css">
+.input-button {
+    white-space: nowrap;
+}
+
+/* IE <=8 doesn't widen the button for <img>s inside <button>s. */
+.input-button img {
+    display:none;
+}
+.input-button img:not(old_ie) {
+    display:inline;
+}
+
+html, body, #maintbl {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: none !important;
+}
+
+form { margin: 0 }
+
+#switch_editor_control img {
+    vertical-align: middle;
+}
+
+#codewindow {
+    margin:0;
+    width: 100%;
+    border:0;
+}
+
+#maintbl, #maintbl tr, #maintbl td {
+    margin:0;
+    padding:0;
+    border-collapse: collapse;
+    border: none;
+}
+
+#maintbl td#codewindow_container {
+    padding: 0 0 0 3px;
+}
+
+#tcell, #page {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+#closebutton {
+    padding-right: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+#helpDiv {
+    margin-bottom: 10px;
+}
+.cjt_progress_overlay .bd {
+    background: transparent;
+}
+
+.spriteui_img{margin:0;padding:0;background:url("/cPanel_magic_revision_53921455711.1788/frontend/bluehost/branding/ui_sprites_img_skip_filetype_gif.jpg");}  #ui-aqua-hd-lt{background-position:0 -1px;width:7px;height:22px;}#ui-aqua-hd-rt{background-position:0 -25px;width:7px;height:22px;}
+
+.spriteui_img_trans{position:relative;margin:0;padding:0;top:0px;float:left;background:url("/cPanel_magic_revision_66343077884.3586/frontend/bluehost/branding/ui_sprites_img_only_filetype_gif.gif");} #ui-accept{background-position:0 -0px;width:16px;height:16px;}#ui-collapse{background-position:0 -16px;width:14px;height:14px;}#ui-expand{background-position:0 -30px;width:14px;height:14px;}#ui-getstart-icon{background-position:0 -44px;width:72px;height:72px;}#ui-homeb{background-position:0 -116px;width:20px;height:19px;}#ui-reject{background-position:0 -135px;width:16px;height:16px;}#ui-start32{background-position:0 -151px;width:32px;height:32px;}#ui-stop32{background-position:0 -183px;width:32px;height:32px;}#ui-x3-hd-close{background-position:0 -215px;width:16px;height:16px;}#ui-x3-hd-closehover{background-position:0 -231px;width:16px;height:16px;}
+
+.spriteui_bg{position:relative;margin:0;padding:0;top:0px;float:left;background:url("/cPanel_magic_revision_71394455450.1202/frontend/bluehost/branding/ui_sprites_bg_snap_to_smallest_width.png");}#ui-aqua-hd-bg{background-position:0 -0px;width:18px;height:22px;}#ui-button-bg{background-position:0 -322px;width:18px;height:22px;}#ui-button-bg-over{background-position:0 -644px;width:18px;height:22px;}#ui-tbl-bg{background-position:0 -966px;width:18px;height:22px;}#ui-tbl-bg-over{background-position:0 -1288px;width:2px;height:35px;}#ui-bg{background-position:0 -1623px;width:20px;height:750px;}
+
+.spriteheading_compleximg{position:relative;margin:0;padding:0;top:0px;float:left;background:url("/cPanel_magic_revision_95092213480.6193/frontend/bluehost/branding/heading_sprites_compleximg.jpg") no-repeat;}#heading-top-billboard{background-position:0 -1px;width:742px;height:145px;}
+
+.spriteheading_img{position:relative;margin:0;padding:0;top:0px;float:left;background:url("/cPanel_magic_revision_47131148320.3818/frontend/bluehost/branding/heading_sprites_img.png");}#heading-help_off{background-position:0 -0px;width:35px;height:37px;}#heading-help_on{background-position:0 -37px;width:35px;height:37px;}#heading-home_off{background-position:0 -74px;width:35px;height:37px;}#heading-home_on{background-position:0 -111px;width:35px;height:37px;}#heading-logout_off{background-position:0 -148px;width:35px;height:37px;}#heading-logout_on{background-position:0 -185px;width:35px;height:37px;}
+
+.spriteheading_bg{position:relative;top:0px;left:0px;margin:0;padding:0;background:url("/cPanel_magic_revision_93394641135.4211/frontend/bluehost/branding/heading_sprites_bg_snap_to_smallest_width.png") repeat-x;}#heading-bottom_bg{background-position:0 -0px;height:23px;}#heading-top-header-bg{background-position:0 -323px;height:145px;}
+
+.box-expand-control{cursor:pointer;cursor:hand;background:url("/cPanel_magic_revision_66343077884.3586/frontend/bluehost/branding/ui_sprites_img_only_filetype_gif.gif") repeat;background-position:0 -30px;width:14px;height:14px;}
+
+.box-collapse-control{cursor:pointer;cursor:hand;background:url("/cPanel_magic_revision_66343077884.3586/frontend/bluehost/branding/ui_sprites_img_only_filetype_gif.gif") repeat;background-position:0 -16px;width:14px;height:14px;}
+
+.create-button, .input-button{background-image:url("/cPanel_magic_revision_71394455450.1202/frontend/bluehost/branding/ui_sprites_bg_snap_to_smallest_width.png"); background-repeat: repeat-x;}.create-button, .input-button{ background-position:0 -322px;height:22px; }
+
+.create-button:hover, .input-button:hover{background-image:url("/cPanel_magic_revision_71394455450.1202/frontend/bluehost/branding/ui_sprites_bg_snap_to_smallest_width.png"); background-repeat: repeat-x;}.create-button:hover, .input-button:hover{ background-position:0 -644px;height:22px; }
+
+body{background-image:url("/cPanel_magic_revision_71394455450.1202/frontend/bluehost/branding/ui_sprites_bg_snap_to_smallest_width.png"); background-repeat: repeat-x;}body{ background-position:0 -1623px;}
+
+h3, h6, #notices h6, #quota-warnings h6, #content-stats h6{background:url("/cPanel_magic_revision_71394455450.1202/frontend/bluehost/branding/ui_sprites_bg_snap_to_smallest_width.png") bottom repeat-x;}h3, h6, #notices h6, #quota-warnings h6, #content-stats h6{background-position:0 -966px;}
+ 
+
+.yui-panel .tl,.yui-panel .lt,.panel .tl,.panel .lt {background: url("/cPanel_magic_revision_53921455711.1788/frontend/bluehost/branding/ui_sprites_img_skip_filetype_gif.jpg") repeat;background-position:0 -1px;width:7px;height:22px;}
+.yui-panel .tr,.yui-panel .rt,.panel .tr,.panel .rt {background: url("/cPanel_magic_revision_53921455711.1788/frontend/bluehost/branding/ui_sprites_img_skip_filetype_gif.jpg") repeat;background-position:0 -25px;width:7px;height:22px;}
+.yui-panel .container-close:hover,.panel .close:hover,.panel .close.secure:hover,.panel .close.nonsecure:hover {background:url("/cPanel_magic_revision_66343077884.3586/frontend/bluehost/branding/ui_sprites_img_only_filetype_gif.gif") repeat;background-position:0 -231px;width:16px;height:16px;}
+.yui-panel .container-close,.panel .close,.panel .close.secure,.panel .close.nonsecure {background:url("/cPanel_magic_revision_66343077884.3586/frontend/bluehost/branding/ui_sprites_img_only_filetype_gif.gif") repeat;background-position:0 -215px;width:16px;height:16px;}
+.fm-panel .container-close:hover,.panel .close:hover,.panel .close.secure:hover,.panel .close.nonsecure:hover {background:url("/cPanel_magic_revision_66343077884.3586/frontend/bluehost/branding/ui_sprites_img_only_filetype_gif.gif") repeat;}
+.fm-panel .container-close,.panel .close,.panel .close.secure,.panel .close.nonsecure {background:url("/cPanel_magic_revision_66343077884.3586/frontend/bluehost/branding/ui_sprites_img_only_filetype_gif.gif") repeat;}
+
+
+
+/* Suppress inherited styles from global style sheets. */
+.yui-panel .hd,
+.yui-panel .bd,
+.yui-panel .ft {
+    background-image: none;
+    font-size: 100%;
+}
+textarea {
+    font-size: 1.2em;
+    font-family: monospace;
+}
+
+/* overrides from tree_styles2_optimized.css */
+p {
+    line-height: normal;
+}
+.input-button, .input-button:hover {
+    height: auto;
+}
+</style>
+
+<!--[if IE]>
+<style type="text/css">
+#codewindow {
+    width: 99.5%;
+}
+</style>
+<![endif]-->
+
+<script charset="UTF-8" src="cPanel%20X_files/en.js" type="text/javascript"></script><script charset="UTF-8" src="cPanel%20X_files/html.js" type="text/javascript"></script></head>
+<body class="nomargins yui-skin-sam">
+<form action="javascript:void(0)" name="sform" onsubmit="loadfdata('sform_submit'); return false;">
+<table id="maintbl" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr style="background-color: #cccccc;">
+ <td style="height: 26px;" height="29">
+    <div style="float:left; width:70%; padding-left:5px;">
+    <label style="font-weight: 900; font-size:13px;">Currently editing:
+    <input style="width:40%;height:24px;" id="path" name="path" value="/home6/gharghar/public_html/msapkota/index.html"></label>
+    <label style="font-weight: 900; font-size:13px;">Encoding:
+        <select id="charset" name="charset">
+        
+        <option value="ansi_x3.110-1983">ansi_x3.110-1983</option><option value="ansi_x3.4-1968">ansi_x3.4-1968</option><option value="armscii-8">armscii-8</option><option value="asmo_449">asmo_449</option><option value="big5">big5</option><option value="big5-hkscs">big5-hkscs</option><option value="brf">brf</option><option value="bs_4730">bs_4730</option><option value="bs_viewdata">bs_viewdata</option><option value="cp10007">cp10007</option><option value="cp1125">cp1125</option><option value="cp1250">cp1250</option><option value="cp1253">cp1253</option><option value="cp1254">cp1254</option><option value="cp1255">cp1255</option><option value="cp1256">cp1256</option><option value="cp1257">cp1257</option><option value="cp1258">cp1258</option><option value="cp737">cp737</option><option value="cp775">cp775</option><option value="csa_z243.4-1985-1">csa_z243.4-1985-1</option><option value="csa_z243.4-1985-2">csa_z243.4-1985-2</option><option value="csa_z243.4-1985-gr">csa_z243.4-1985-gr</option><option value="csn_369103">csn_369103</option><option value="cwi">cwi</option><option value="dec-mcs">dec-mcs</option><option value="din_66003">din_66003</option><option value="ds_2089">ds_2089</option><option value="ebcdic-at-de">ebcdic-at-de</option><option value="ebcdic-at-de-a">ebcdic-at-de-a</option><option value="ebcdic-ca-fr">ebcdic-ca-fr</option><option value="ebcdic-dk-no">ebcdic-dk-no</option><option value="ebcdic-dk-no-a">ebcdic-dk-no-a</option><option value="ebcdic-es">ebcdic-es</option><option value="ebcdic-es-a">ebcdic-es-a</option><option value="ebcdic-es-s">ebcdic-es-s</option><option value="ebcdic-fi-se">ebcdic-fi-se</option><option value="ebcdic-fi-se-a">ebcdic-fi-se-a</option><option value="ebcdic-fr">ebcdic-fr</option><option value="ebcdic-is-friss">ebcdic-is-friss</option><option value="ebcdic-it">ebcdic-it</option><option value="ebcdic-pt">ebcdic-pt</option><option value="ebcdic-uk">ebcdic-uk</option><option value="ebcdic-us">ebcdic-us</option><option value="ecma-cyrillic">ecma-cyrillic</option><option value="es">es</option><option value="es2">es2</option><option value="euc-jisx0213">euc-jisx0213</option><option value="euc-jp">euc-jp</option><option value="euc-jp-ms">euc-jp-ms</option><option value="euc-kr">euc-kr</option><option value="euc-tw">euc-tw</option><option value="gb18030">gb18030</option><option value="gb2312">gb2312</option><option value="gb_1988-80">gb_1988-80</option><option value="gbk">gbk</option><option value="georgian-academy">georgian-academy</option><option value="georgian-ps">georgian-ps</option><option value="gost_19768-74">gost_19768-74</option><option value="greek-ccitt">greek-ccitt</option><option value="greek7">greek7</option><option value="greek7-old">greek7-old</option><option value="gsm03.38">gsm03.38</option><option value="hp-greek8">hp-greek8</option><option value="hp-roman8">hp-roman8</option><option value="hp-roman9">hp-roman9</option><option value="hp-thai8">hp-thai8</option><option value="hp-turkish8">hp-turkish8</option><option value="hz-gb-2312">hz-gb-2312</option><option value="ibm037">ibm037</option><option value="ibm038">ibm038</option><option value="ibm1004">ibm1004</option><option value="ibm1026">ibm1026</option><option value="ibm1047">ibm1047</option><option value="ibm1124">ibm1124</option><option value="ibm1129">ibm1129</option><option value="ibm1132">ibm1132</option><option value="ibm1133">ibm1133</option><option value="ibm1160">ibm1160</option><option value="ibm1161">ibm1161</option><option value="ibm1162">ibm1162</option><option value="ibm1163">ibm1163</option><option value="ibm1164">ibm1164</option><option value="ibm256">ibm256</option><option value="ibm273">ibm273</option><option value="ibm274">ibm274</option><option value="ibm275">ibm275</option><option value="ibm277">ibm277</option><option value="ibm278">ibm278</option><option value="ibm280">ibm280</option><option value="ibm281">ibm281</option><option value="ibm284">ibm284</option><option value="ibm285">ibm285</option><option value="ibm290">ibm290</option><option value="ibm297">ibm297</option><option value="ibm420">ibm420</option><option value="ibm423">ibm423</option><option value="ibm424">ibm424</option><option value="ibm437">ibm437</option><option value="ibm500">ibm500</option><option value="ibm850">ibm850</option><option value="ibm851">ibm851</option><option value="ibm852">ibm852</option><option value="ibm855">ibm855</option><option value="ibm856">ibm856</option><option value="ibm857">ibm857</option><option value="ibm860">ibm860</option><option value="ibm861">ibm861</option><option value="ibm862">ibm862</option><option value="ibm863">ibm863</option><option value="ibm864">ibm864</option><option value="ibm865">ibm865</option><option value="ibm866">ibm866</option><option value="ibm866nav">ibm866nav</option><option value="ibm868">ibm868</option><option value="ibm869">ibm869</option><option value="ibm870">ibm870</option><option value="ibm871">ibm871</option><option value="ibm874">ibm874</option><option value="ibm875">ibm875</option><option value="ibm880">ibm880</option><option value="ibm891">ibm891</option><option value="ibm903">ibm903</option><option value="ibm904">ibm904</option><option value="ibm905">ibm905</option><option value="ibm918">ibm918</option><option value="ibm922">ibm922</option><option value="iec_p27-1">iec_p27-1</option><option value="inis">inis</option><option value="inis-8">inis-8</option><option value="inis-cyrillic">inis-cyrillic</option><option value="invariant">invariant</option><option value="isiri-3342">isiri-3342</option><option value="iso-8859-1">iso-8859-1</option><option value="iso-8859-10">iso-8859-10</option><option value="iso-8859-11">iso-8859-11</option><option value="iso-8859-13">iso-8859-13</option><option value="iso-8859-14">iso-8859-14</option><option value="iso-8859-15">iso-8859-15</option><option value="iso-8859-16">iso-8859-16</option><option value="iso-8859-2">iso-8859-2</option><option value="iso-8859-3">iso-8859-3</option><option value="iso-8859-4">iso-8859-4</option><option value="iso-8859-5">iso-8859-5</option><option value="iso-8859-6">iso-8859-6</option><option value="iso-8859-7">iso-8859-7</option><option value="iso-8859-8">iso-8859-8</option><option value="iso-8859-9">iso-8859-9</option><option value="iso-8859-9e">iso-8859-9e</option><option value="iso-ir-197">iso-ir-197</option><option value="iso-ir-209">iso-ir-209</option><option value="iso-ir-90">iso-ir-90</option><option value="iso_10367-box">iso_10367-box</option><option value="iso_10646">iso_10646</option><option value="iso_11548-1">iso_11548-1</option><option value="iso_2033-1983">iso_2033-1983</option><option value="iso_5427">iso_5427</option><option value="iso_5427-ext">iso_5427-ext</option><option value="iso_5428">iso_5428</option><option value="iso_646.basic">iso_646.basic</option><option value="iso_646.irv">iso_646.irv</option><option value="iso_6937">iso_6937</option><option value="iso_6937-2-25">iso_6937-2-25</option><option value="iso_6937-2-add">iso_6937-2-add</option><option value="iso_8859-1,gl">iso_8859-1,gl</option><option value="iso_8859-supp">iso_8859-supp</option><option value="it">it</option><option value="jis_c6220-1969-jp">jis_c6220-1969-jp</option><option value="jis_c6220-1969-ro">jis_c6220-1969-ro</option><option value="jis_c6229-1984-a">jis_c6229-1984-a</option><option value="jis_c6229-1984-b">jis_c6229-1984-b</option><option value="jis_c6229-1984-b-add">jis_c6229-1984-b-add</option><option value="jis_c6229-1984-hand">jis_c6229-1984-hand</option><option value="jis_c6229-1984-hand-add">jis_c6229-1984-hand-add</option><option value="jis_c6229-1984-kana">jis_c6229-1984-kana</option><option value="jis_x0201">jis_x0201</option><option value="johab">johab</option><option value="jus_i.b1.002">jus_i.b1.002</option><option value="jus_i.b1.003-mac">jus_i.b1.003-mac</option><option value="jus_i.b1.003-serb">jus_i.b1.003-serb</option><option value="koi-8">koi-8</option><option value="koi8-r">koi8-r</option><option value="koi8-ru">koi8-ru</option><option value="koi8-t">koi8-t</option><option value="koi8-u">koi8-u</option><option value="ks_c_5601-1987">ks_c_5601-1987</option><option value="ksc5636">ksc5636</option><option value="latin-greek">latin-greek</option><option value="latin-greek-1">latin-greek-1</option><option value="mac-centraleurope">mac-centraleurope</option><option value="mac-cyrillic">mac-cyrillic</option><option value="mac-is">mac-is</option><option value="mac-sami">mac-sami</option><option value="mac-uk">mac-uk</option><option value="macintosh">macintosh</option><option value="mik">mik</option><option value="msz_7795.3">msz_7795.3</option><option value="nats-dano">nats-dano</option><option value="nats-dano-add">nats-dano-add</option><option value="nats-sefi">nats-sefi</option><option value="nats-sefi-add">nats-sefi-add</option><option value="nc_nc00-10">nc_nc00-10</option><option value="nextstep">nextstep</option><option value="nf_z_62-010">nf_z_62-010</option><option value="nf_z_62-010_1973">nf_z_62-010_1973</option><option value="ns_4551-1">ns_4551-1</option><option value="ns_4551-2">ns_4551-2</option><option value="pt">pt</option><option value="pt154">pt154</option><option value="pt2">pt2</option><option value="rk1048">rk1048</option><option value="sami">sami</option><option value="sami-ws2">sami-ws2</option><option value="sen_850200_b">sen_850200_b</option><option value="sen_850200_c">sen_850200_c</option><option value="shift_jis">shift_jis</option><option value="shift_jisx0213">shift_jisx0213</option><option value="t.101-g2">t.101-g2</option><option value="t.61-7bit">t.61-7bit</option><option value="t.61-8bit">t.61-8bit</option><option value="tcvn5712-1">tcvn5712-1</option><option value="tis-620">tis-620</option><option value="tscii">tscii</option><option value="us-ascii">us-ascii</option><option value="utf-7">utf-7</option><option value="utf-8" selected="selected">utf-8</option><option value="videotex-suppl">videotex-suppl</option><option value="viscii">viscii</option><option value="windows-1251">windows-1251</option><option value="windows-1252">windows-1252</option><option value="windows-31j">windows-31j</option>
+        
+        </select>
+    </label>
+    <input onclick="loadfile(this);" class="input-button" value="Reopen" type="button">
+    </div>
+    <div style="float:right;padding-right:5px">
+        <button type="button" class="input-button" id="switch_editor_control" onclick="try {toggle_EditArea(this)} catch(e) {} return false">
+
+<img src="cPanel%20X_files/codeEditorB.gif" width="16">
+Switch to Code Editor
+
+        </button>
+        &nbsp;
+        <input onclick="confirm_close(this);" class="input-button" value="Close" type="button">
+        <button type="submit" id="sform_submit" class="input-button" style="font-weight:bold">Save</button>
+    </div>
+ </td>
+</tr>
+<tr>
+ <td id="codewindow_container">
+    <textarea style="width: 1597px; height: 740px;" id="codewindow" class="codepress html" name="page" wrap="soft">﻿&lt;!DOCTYPE
+ html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;title&gt;Manish Sapkota&lt;/title&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; 
+charset=UTF-8"&gt;
+    &lt;meta name="author" content="owwwlab.com"&gt;
+    &lt;meta name="viewport" content="width=device-width, 
+initial-scale=1, maximum-scale=1"&gt;
+
+    &lt;meta name="description" content="A theme for faculty profile 
+page" /&gt;
+    &lt;meta name="keywords" content="Manish, Manish Sapkota, Sapkota, 
+University of Florida, UF, UFL, Deep Learning, Machine Learning, PhD, 
+Graduate, Graduate Student" /&gt;
+
+    &lt;link rel="shortcut icon" href="../favicon.ico"&gt;
+
+    &lt;!--CSS styles--&gt;
+    &lt;link rel="stylesheet" href="css/bootstrap.css"&gt;
+    &lt;link rel="stylesheet" href="css/font-awesome.min.css"&gt;
+    &lt;link rel="stylesheet" 
+href="css/perfect-scrollbar-0.4.5.min.css"&gt;
+    &lt;link rel="stylesheet" href="css/magnific-popup.css"&gt;
+    &lt;link rel="stylesheet" href="css/style.css"&gt;
+    &lt;link id="theme-style" rel="stylesheet" 
+href="css/styles/default.css"&gt;
+
+
+    &lt;!--/CSS styles--&gt;
+    &lt;!--Javascript files--&gt;
+    &lt;script type="text/javascript" 
+src="js/jquery-1.11.3.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" 
+src="js/TweenMax.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" 
+src="js/jquery.touchSwipe.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" 
+src="js/jquery.carouFredSel-6.2.1-packed.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript" 
+src="js/modernizr.custom.63321.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" 
+src="js/jquery.dropdownit.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript" 
+src="js/ScrollToPlugin.min.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript" 
+src="js/bootstrap.min.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript" 
+src="js/jquery.mixitup.min.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript" 
+src="js/masonry.min.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript" 
+src="js/perfect-scrollbar-0.4.5.with-mousewheel.min.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript" 
+src="js/jquery.nicescroll.min.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript" 
+src="js/magnific-popup.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" 
+src="js/custom.js"&gt;&lt;/script&gt;
+
+    &lt;!--/Javascript files--&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;div id="wrapper"&gt;
+        &lt;a href="#sidebar" class="mobilemenu"&gt;&lt;i class="fa 
+fa-reorder"&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;div id="sidebar"&gt;
+            &lt;div id="sidebar-wrapper"&gt;
+                &lt;div id="sidebar-inner"&gt;
+                    &lt;!-- Profile/logo section--&gt;
+                    &lt;div id="profile" class="clearfix"&gt;
+                        &lt;div class="portrate 
+hidden-xs"&gt;&lt;/div&gt;
+                        &lt;div class="title"&gt;
+                            &lt;h2&gt;Manish Sapkota&lt;/h2&gt;
+                            &lt;h3&gt;&lt;a href="http://www.ufl.edu" 
+target="_blank"&gt;University of Florida&lt;/a&gt;&lt;/h3&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;!-- /Profile/logo section--&gt;
+
+                    &lt;!-- Main navigation--&gt;
+                    &lt;div id="main-nav"&gt;
+                        &lt;ul id="navigation"&gt;
+                            &lt;li&gt;
+                                &lt;a href="#biography"&gt;
+                                    &lt;i class="fa 
+fa-user"&gt;&lt;/i&gt;
+                                    &lt;div class="text"&gt;About 
+Me&lt;/div&gt;
+                                &lt;/a&gt;
+                            &lt;/li&gt;
+
+                            &lt;li&gt;
+                                &lt;a href="#research"&gt;
+                                    &lt;i class="fa 
+fa-book"&gt;&lt;/i&gt;
+                                    &lt;div 
+class="text"&gt;Research&lt;/div&gt;
+                                &lt;/a&gt;
+                            &lt;/li&gt;
+
+                            &lt;li&gt;
+                                &lt;a href="#publications"&gt;
+                                    &lt;i class="fa 
+fa-edit"&gt;&lt;/i&gt;
+                                    &lt;div 
+class="text"&gt;Publications&lt;/div&gt;
+                                &lt;/a&gt;
+                            &lt;/li&gt;
+
+                            &lt;li&gt;
+                                &lt;a href="#teaching"&gt;
+                                    &lt;i class="fa 
+fa-clock-o"&gt;&lt;/i&gt;
+                                    &lt;div 
+class="text"&gt;Teaching&lt;/div&gt;
+                                &lt;/a&gt;
+                            &lt;/li&gt;
+
+                            &lt;li&gt;
+                                &lt;a href="#gallery"&gt;
+                                    &lt;i class="fa 
+fa-picture-o"&gt;&lt;/i&gt;
+                                    &lt;div 
+class="text"&gt;Gallery&lt;/div&gt;
+                                &lt;/a&gt;
+                            &lt;/li&gt;
+
+                            &lt;li&gt;
+                                &lt;a href="#contact"&gt;
+                                    &lt;i class="fa 
+fa-calendar"&gt;&lt;/i&gt;
+                                    &lt;div class="text"&gt;Contact 
+Me&lt;/div&gt;
+                                &lt;/a&gt;
+                            &lt;/li&gt;
+
+                            &lt;li class="external"&gt;
+                                &lt;a href="#"&gt;
+                                    &lt;i class="fa 
+fa-download"&gt;&lt;/i&gt;
+                                    &lt;div class="text"&gt;Download 
+CV&lt;/div&gt;
+                                &lt;/a&gt;
+                            &lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;!-- /Main navigation--&gt;
+                    &lt;!-- Sidebar footer --&gt;
+                    &lt;div id="sidebar-footer"&gt;
+                        &lt;div class="social-icons"&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;&lt;i 
+class="fa fa-facebook"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;&lt;i 
+class="fa fa-twitter"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a 
+href="https://www.linkedin.com/in/sapkotam" target="_blank"&gt;&lt;i 
+class="fa fa-linkedin"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+
+
+                        &lt;div id="copyright"&gt;&amp;copy;2016 Manish 
+Sapkota. All Rights Reserved.&lt;/div&gt;
+
+                    &lt;/div&gt;
+                    &lt;!-- /Sidebar footer --&gt;
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div id="main"&gt;
+
+            &lt;div id="biography" class="page home" data-pos="home"&gt;
+                &lt;div class="pageheader"&gt;
+                    &lt;div class="headercontent"&gt;
+                        &lt;div class="section-container"&gt;
+
+                            &lt;div class="row"&gt;
+                                &lt;div class="col-sm-2 
+visible-sm"&gt;&lt;/div&gt;
+                                &lt;div class="col-sm-8 col-md-5"&gt;
+                                    &lt;div class="biothumb"&gt;
+                                        &lt;img alt="image" 
+src="img/personal/per_big.png" class="img-responsive"&gt;
+                                        &lt;div class="overlay"&gt;
+
+                                            &lt;h1 class=""&gt;Manish 
+Sapkota&lt;/h1&gt;
+                                            &lt;ul 
+class="list-unstyled"&gt;
+                                                &lt;li&gt;PhD 
+Candidate&lt;/li&gt;
+                                                &lt;li&gt;&lt;a 
+href="http://ece.ufl.edu" target="_blank"&gt;Department of Electrical 
+and Computer Engineering&lt;/a&gt;&lt;/li&gt;
+                                                &lt;li&gt;&lt;a 
+href="http://www.ufl.edu" target="_blank"&gt;University of 
+Florida&lt;/a&gt;&lt;/li&gt;
+                                            &lt;/ul&gt;
+                                        &lt;/div&gt;
+
+
+                                    &lt;/div&gt;
+
+                                &lt;/div&gt;
+                                &lt;div class="clearfix visible-sm 
+visible-xs"&gt;&lt;/div&gt;
+                                &lt;div class="col-sm-12 col-md-7"&gt;
+                                    &lt;h3 
+class="title"&gt;Bio&lt;/h3&gt;
+                                    &lt;p&gt;
+                                        I am a PhD candidate (third 
+year) at Univeristy of Florida's Department of Electrical and Computer 
+Engineering (&lt;a href="http://www.ece.ufl.edu/" 
+target="_blank"&gt;ECE&lt;/a&gt;). My
+                                            research focuses on computer
+ vision and machine learning. I am also working on biomedical image 
+analysis and informatics, high performance computing
+                                            and development of computer 
+aided diagnosis using big data. I am being supervised by &lt;a 
+href="http://www.bme.ufl.edu/labs/yang/" target="_blank"&gt;Dr. Lin 
+Yang&lt;/a&gt;
+                                        (check out our BICI2 research 
+lab &lt;a href="http://www.bme.ufl.edu/labs/yang/group.html" 
+target="_blank"&gt;here&lt;/a&gt;).
+                                    &lt;/p&gt;
+                                &lt;/div&gt;
+                                &lt;div class="col-sm-12 col-md-7"&gt;
+                                    &lt;div class="title text-left"&gt;
+                                        &lt;h3&gt;News&lt;/h3&gt;
+                                    &lt;/div&gt;
+                                    
+                                    &lt;ul class="ul-boxed 
+list-unstyled" style="margin-left: 0px;"&gt;
+
+                                        &lt;li&gt;
+                                          
+                                                &lt;p 
+style="padding:0;margin-top:5px"&gt;03/2016: Got new 
+webpage!!!&lt;/p&gt;
+                                           
+                                        &lt;/li&gt;
+                                    &lt;/ul&gt;
+                                    &lt;a href="#news"&gt;&lt;h3&gt;More
+ here...&lt;/h3&gt;&lt;/a&gt;
+                                &lt;/div&gt;
+
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class="pagecontents"&gt;
+                    &lt;div class="section color-1"&gt;
+                        &lt;div class="section-container"&gt;
+                            &lt;div class="row"&gt;
+                                &lt;div class="col-md-5 
+col-md-offset-1"&gt;
+                                    &lt;div class="title 
+text-center"&gt;
+                                        &lt;h3&gt;Positions&lt;/h3&gt;
+                                    &lt;/div&gt;
+                                    &lt;ul class="ul-dates"&gt;
+                                        &lt;li&gt;
+                                            &lt;div class="dates"&gt;
+                                                
+&lt;span&gt;Present&lt;/span&gt;
+                                                
+&lt;span&gt;08/2014&lt;/span&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class="content"&gt;
+                                                &lt;h4&gt;Graduate 
+Student Researcher&lt;/h4&gt;
+                                                
+&lt;p&gt;&lt;em&gt;University of Florida&lt;/em&gt;, &lt;a 
+href="http://www.bme.ufl.edu/labs/yang/group.html" 
+target="_blank"&gt;BICI2 Lab&lt;/a&gt;, Gainesville, FL&lt;/p&gt;
+                                            &lt;/div&gt;
+                                        &lt;/li&gt;
+                                        &lt;li&gt;
+                                            &lt;div class="dates"&gt;
+                                                
+&lt;span&gt;05/2014&lt;/span&gt;
+                                                
+&lt;span&gt;07/2014&lt;/span&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class="content"&gt;
+                                                &lt;h4&gt;Summer 
+Intern&lt;/h4&gt;
+                                                &lt;p&gt;&lt;em&gt;&lt;a
+ href="http://www.cytoinformatics.com" 
+target="_blank"&gt;Cytoinformatics LLC&lt;/a&gt;&lt;/em&gt;, Lexington, 
+KY&lt;/p&gt;
+                                            &lt;/div&gt;
+                                        &lt;/li&gt;
+                                        &lt;li&gt;
+                                            &lt;div class="dates"&gt;
+                                                
+&lt;span&gt;05/2012&lt;/span&gt;
+                                                
+&lt;span&gt;07/2014&lt;/span&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class="content"&gt;
+                                                &lt;h4&gt;Graduate 
+Student Researcher&lt;/h4&gt;
+                                                
+&lt;p&gt;&lt;em&gt;University of Kentucky&lt;/em&gt;, Department of 
+Biomedical Informatics, Lexington, KY&lt;/p&gt;
+                                            &lt;/div&gt;
+                                        &lt;/li&gt;
+                                        &lt;li&gt;
+                                            &lt;div class="dates"&gt;
+                                                
+&lt;span&gt;05/2013&lt;/span&gt;
+                                                
+&lt;span&gt;08/2013&lt;/span&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class="content"&gt;
+                                                &lt;h4&gt;Student 
+Programmer&lt;/h4&gt;
+                                                
+&lt;p&gt;&lt;em&gt;University of Kentucky&lt;/em&gt;, Physical Plant 
+Division, Lexington, KY&lt;/p&gt;
+                                            &lt;/div&gt;
+                                        &lt;/li&gt;
+                                        &lt;li&gt;
+                                            &lt;div class="dates"&gt;
+                                                
+&lt;span&gt;07/2008&lt;/span&gt;
+                                                
+&lt;span&gt;06/2011&lt;/span&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class="content"&gt;
+                                                &lt;h4&gt;Senior 
+Developer&lt;/h4&gt;
+                                                &lt;p&gt;&lt;em&gt;&lt;a
+ href="http://grafioffshorenepal.com/" target="_blank"&gt;IT Offshore 
+Nepal Pvt. Ltd.&lt;/a&gt;&lt;/em&gt;, Kathmandu, Nepal&lt;/p&gt;
+                                            &lt;/div&gt;
+                                        &lt;/li&gt;
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                                &lt;div class="col-md-5"&gt;
+                                     &lt;div class="title 
+text-center"&gt;
+                                        &lt;h3&gt;Skills&lt;/h3&gt;
+                                    &lt;/div&gt;
+                                    &lt;ul class="ul-card"&gt;
+                                        &lt;li 
+style="padding-top:0px;"&gt;
+                                            
+ 
+
+                                            &lt;div 
+class="description"&gt;
+                                                &lt;p&gt;&lt;span 
+class="waht"&gt;Scientific and data: &lt;/span&gt;&lt;span 
+style="font-size:14px;font-weight:300;"&gt;Matlab, experience with 
+C/C++, Python.&lt;/span&gt;&lt;/p&gt;
+                                                &lt;p&gt;&lt;span 
+class="waht"&gt;Application and web: &lt;/span&gt;&lt;span 
+style="font-size:14px;font-weight:300;"&gt;Asp.Net(C#), experience with 
+php.&lt;/span&gt;&lt;/p&gt;
+                                                &lt;p&gt;&lt;span 
+class="waht"&gt;Additional experience with: &lt;/span&gt;&lt;span 
+style="font-size:14px;font-weight:300;"&gt;Java, JavaScript, Jquery, 
+CSS, SQL. &lt;/span&gt;&lt;/p&gt;
+                                            &lt;/div&gt;
+                                        &lt;/li&gt;
+                                        
+                                    &lt;/ul&gt;
+                                    &lt;div class="title 
+text-center"&gt;
+                                        &lt;h3&gt;Education &amp; 
+Training&lt;/h3&gt;
+                                    &lt;/div&gt;
+                                    &lt;ul class="ul-card"&gt;
+                                        &lt;li&gt;
+                                            &lt;div class="dy"&gt;
+                                                &lt;span 
+class="degree"&gt;Ph.D.&lt;/span&gt;
+                                                &lt;span 
+class="year"&gt;Expected Spring 2017&lt;/span&gt;
+                                            &lt;/div&gt;
+                                            &lt;div 
+class="description"&gt;
+                                                &lt;p 
+class="waht"&gt;Ph.D. in Electrical and Computer Engineering&lt;/p&gt;
+                                                &lt;p 
+class="where"&gt;University of Florida&lt;/p&gt;
+                                            &lt;/div&gt;
+                                        &lt;/li&gt;
+                                        &lt;li&gt;
+                                            &lt;div class="dy"&gt;
+                                                &lt;span 
+class="degree"&gt;B.E.&lt;/span&gt;&lt;span 
+class="year"&gt;2007&lt;/span&gt;
+                                            &lt;/div&gt;
+                                            &lt;div 
+class="description"&gt;
+                                                &lt;p 
+class="waht"&gt;B.E. in Computer Engineering&lt;/p&gt;
+                                                &lt;p 
+class="where"&gt;Purbanchal University, Nepal.&lt;/p&gt;
+                                            &lt;/div&gt;
+                                        &lt;/li&gt;
+
+                                    &lt;/ul&gt;
+
+                                   
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="section color-2"&gt;
+                        &lt;div class="section-container"&gt;
+                            &lt;div class="row"&gt;
+                                &lt;div class="col-md-10 
+col-md-offset-1"&gt;
+                                    &lt;div class="title 
+text-center"&gt;
+                                       &lt;h3&gt;News&lt;/h3&gt;
+                                        &lt;a name="news"&gt;&lt;/a&gt;
+                                    &lt;/div&gt;
+                                    &lt;ul class="timeline"&gt;
+
+                                        &lt;li class="open"&gt;
+                                            &lt;div 
+class="date"&gt;03/2016&lt;/div&gt;
+                                            &lt;div 
+class="circle"&gt;&lt;/div&gt;
+                                            &lt;div class="data"&gt;
+                                                &lt;div 
+class="subject"&gt;New webpage up and running.&lt;/div&gt;
+                                                &lt;div class="text 
+row"&gt;
+                                                    &lt;div 
+class="col-md-2"&gt;
+                                                        &lt;img 
+alt="image" class="thumbnail img-responsive" 
+src="img/news/webpg.png"&gt;
+                                                    &lt;/div&gt;
+                                                    &lt;div 
+class="col-md-10"&gt;
+                                                        After few months
+ of tug of war between different templates, I finally settled and went 
+online with my new webpage. All the news and updates
+                                                        on the exiciting
+ researches, which I am part of, will be posted. Stay tuned for the new 
+releases.
+                                                       
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/li&gt;
+                                        &lt;li class="open"&gt;
+                                            &lt;div 
+class="date"&gt;08/2014&lt;/div&gt;
+                                            &lt;div 
+class="circle"&gt;&lt;/div&gt;
+                                            &lt;div class="data"&gt;
+                                                &lt;div 
+class="subject"&gt;We moved to University of Florida.&lt;/div&gt;
+                                                &lt;div class="text 
+row"&gt;
+                                                    
+                                                    &lt;div 
+class="col-md-12"&gt;
+                                                        In the exciting 
+turns of events we (all of us in BICI2 lab with my advisor) moved to 
+University of Florida. I will be pursuing my rest of the PhD at 
+Department of ECE in UF.
+                                                        Wild Cats turned
+ to Gators !!!
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/li&gt;
+                                        
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div id="research" class="page"&gt;
+                &lt;div class="pageheader"&gt;
+
+                    &lt;div class="headercontent"&gt;
+
+                        &lt;div class="section-container"&gt;
+                            &lt;h2 class="title"&gt;Research 
+Summary&lt;/h2&gt;
+
+                            &lt;div class="row"&gt;
+                                &lt;div class="col-md-8"&gt;
+                                    &lt;p&gt;Recent devepments in 
+digitial image accquisition have resulted in huge repository of 
+available data for analysis. This demands
+                                        efficient and effective computer
+ vision and machine learning algorithsms. Much of my
+                                        research work/interest lie at or
+ near the intersection of computer vision, machine learning, big data 
+image analysis, high performance computing,  biomedical image analysis 
+and informatics. Research goal is to put together a complete intelligent
+ computer assisted diagnosis system. 
+                                        
+                                        &lt;em&gt;&lt;strong&gt;In 
+recent years, I am working more on convolutional neural network (CNN) 
+for image analysis.&lt;/strong&gt;&lt;/em&gt;
+                                        &lt;/p&gt;
+                                &lt;/div&gt;
+                                &lt;div class="col-md-4"&gt;
+                                    &lt;div class="subtitle 
+text-center"&gt;
+                                        &lt;h3&gt;Interests&lt;/h3&gt;
+                                    &lt;/div&gt;
+                                    &lt;ul class="ul-boxed 
+list-unstyled"&gt;
+                                        &lt;li&gt;Machine 
+Learning&lt;/li&gt;
+                                        
+&lt;li&gt;Supervised/Unsupervised Learning&lt;/li&gt;
+                                        &lt;li&gt;Image 
+Processing&lt;/li&gt;
+                                        &lt;li&gt;Biomedical Image 
+Analysis and Informatics&lt;/li&gt;
+                                        &lt;li&gt;Feature representation
+ learning&lt;/li&gt;
+                                        &lt;li&gt;Big Data/Distributed 
+Computing&lt;/li&gt;
+                                        &lt;li&gt;Computer Aided 
+Diagnosis&lt;/li&gt;
+                                        &lt;li&gt;Application 
+Development&lt;/li&gt;
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class="pagecontents"&gt;
+                   
+                    &lt;div class="section color-2"&gt;
+                        &lt;div class="section-container"&gt;
+                            &lt;div class="title text-center"&gt;
+                                &lt;h3&gt;Research Projects&lt;/h3&gt;
+                            &lt;/div&gt;
+                            &lt;div class="row"&gt;
+                                &lt;div class="col-md-12"&gt;
+                                    &lt;ul class="ul-withdetails"&gt;
+                                        &lt;li&gt;
+                                            &lt;div class="row"&gt;
+                                                &lt;div class="col-sm-6 
+col-md-3"&gt;
+                                                    &lt;div 
+class="image"&gt;
+                                                        &lt;img 
+alt="image" src="img/projects/mm.png" class="img-responsive"&gt;
+                                                        &lt;div 
+class="imageoverlay"&gt;
+                                                            &lt;i 
+class="fa fa-search"&gt;&lt;/i&gt;
+                                                        &lt;/div&gt;
+
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                                &lt;div class="col-sm-6 
+col-md-9"&gt;
+                                                    &lt;div 
+class="meta"&gt;
+                                                        
+&lt;h3&gt;MuscleMiner&lt;/h3&gt;
+                                                        
+&lt;p&gt;Intelligent Diagnostic System for Muscle. Details &lt;a 
+href="http://grantome.com/grant/NIH/R01-AR065479-01A1" 
+target="_blank"&gt;here&lt;/a&gt;&lt;/p&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class="details"&gt;
+                                                &lt;p&gt;
+                                                    Prototype software 
+to provide efficient platform to process and quantify digitized skeletal
+ muscle images. 
+                                                    In its current state
+ the software provides robust and accurate automatic image segmentation 
+of each individual cells of the digitized muscle specimen, and manual 
+                                                    tools for manual 
+correction. Some of the features of the software are:&lt;/p&gt;
+
+                                                    &lt;ul&gt; 
+                                                        &lt;li&gt; 
+Automatic Segmentation, &lt;/li&gt;
+                                                        &lt;li&gt; 
+Manual contour editing,&lt;/li&gt;
+                                                        &lt;li&gt; Zoom 
+and smooth panning,&lt;/li&gt;
+                                                        &lt;li&gt; Easy 
+parameter control for different staining,&lt;/li&gt;
+                                                        &lt;li&gt; Final
+ quantitative analysis report generation, etc &lt;/li&gt;. 
+                                                        &lt;/ul&gt;
+                                                &lt;p&gt; &lt;em&gt;On 
+going and future works:&lt;/em&gt; We are constantly working on 
+integrating new algorithms for image analysis, feature extraction and 
+automated classification. We are also working on
+                                                    improving all the 
+existing algorithms to provide state of the arts. The complete 
+diagnostic system for skeletal muscle diseases, particularly myopathies,
+ will be available for download
+                                                    for the research 
+community in the near future.
+                                                &lt;/p&gt;
+                                            &lt;/div&gt;
+                                        &lt;/li&gt;
+                                        &lt;li&gt;
+                                            &lt;div class="row"&gt;
+                                                &lt;div class="col-sm-6 
+col-md-3"&gt;
+                                                    &lt;div 
+class="image"&gt;
+                                                        &lt;img 
+alt="image" src="img/projects/visualization.gif" 
+class="img-responsive"&gt;
+                                                        &lt;div 
+class="imageoverlay"&gt;
+                                                            &lt;i 
+class="fa fa-search"&gt;&lt;/i&gt;
+                                                        &lt;/div&gt;
+
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                                &lt;div class="col-sm-6 
+col-md-9"&gt;
+                                                    &lt;div 
+class="meta"&gt;
+                                                        &lt;h3&gt;Muscle
+ Visualization&lt;/h3&gt;
+                                                        &lt;p&gt;CBIR 
+Visualization System for Muscle.&lt;/p&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class="details"&gt;
+                                                &lt;p&gt;
+                                                    Software is the 
+prototype of the content based image retrieval (CBIR) system and 
+visualization tool using deep zoom. This tool is
+                                                    used in the case 
+study and automated diagnosis of cases of myopathies (DM, PM and IBM) in
+ the digital skeletal muscle images. In the future, this tool will
+                                                    be integrated with 
+the MuscleMiner software.
+
+                                                &lt;/p&gt;
+                                            &lt;/div&gt;
+                                        &lt;/li&gt;
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div id="publications" class="page"&gt;
+                &lt;div class="page-container"&gt;
+                    &lt;div class="pageheader"&gt;
+                        &lt;div class="headercontent"&gt;
+                            &lt;div class="section-container"&gt;
+
+                                &lt;h2 class="title"&gt;Selected 
+Publications&lt;/h2&gt;
+                                &lt;div class="row"&gt;
+                                    &lt;div class="col-md-12"&gt;
+                                        &lt;p&gt;Most of my recent 
+publications are on supervised deep learning and high performance 
+computing using MapReduce.
+                                        All the publications target 
+specific problems that we endure everyday in the analysis of biomedical 
+image analysis. All my publications
+                                        will be provided here for the 
+research community. All the feedbacks and comments are welcome.
+                                        &lt;/p&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="pagecontents"&gt;
+
+                        &lt;div class="section color-1" id="filters"&gt;
+                            &lt;div class="section-container"&gt;
+                                &lt;div class="row"&gt;
+
+                                    &lt;div class="col-md-3"&gt;
+                                        &lt;h3&gt;Filter by 
+type:&lt;/h3&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="col-md-6"&gt;
+                                        &lt;select id="cd-dropdown" 
+name="cd-dropdown" class="cd-select"&gt;
+                                            &lt;option class="filter" 
+value="all" selected&gt;All types&lt;/option&gt;
+                                            &lt;option class="filter" 
+value="jpaper"&gt;Jounal Papers&lt;/option&gt;
+                                            &lt;option class="filter" 
+value="cpaper"&gt;Conference Papers&lt;/option&gt;
+                                            &lt;option class="filter" 
+value="abstract"&gt;Abstract&lt;/option&gt;
+                                        &lt;/select&gt;
+                                    &lt;/div&gt;
+
+                                    &lt;div class="col-md-3" 
+id="sort"&gt;
+                                        &lt;span&gt;Sort by 
+year:&lt;/span&gt;
+                                        &lt;div class="btn-group 
+pull-right"&gt;
+
+                                            &lt;button type="button" 
+data-sort="data-year" data-order="desc" class="sort btn 
+btn-default"&gt;&lt;i class="fa 
+fa-sort-numeric-asc"&gt;&lt;/i&gt;&lt;/button&gt;
+                                            &lt;button type="button" 
+data-sort="data-year" data-order="asc" class="sort btn 
+btn-default"&gt;&lt;i class="fa 
+fa-sort-numeric-desc"&gt;&lt;/i&gt;&lt;/button&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class="section color-2" 
+id="pub-grid"&gt;
+                            &lt;div class="section-container"&gt;
+
+                                &lt;div class="row"&gt;
+                                    &lt;div class="col-md-12"&gt;
+                                        &lt;div class="pitems"&gt;
+                                            
+                                            &lt;div class="item mix 
+book" data-year="2010"&gt;
+                                                &lt;div 
+class="pubmain"&gt;
+                                                    &lt;div 
+class="pubassets"&gt;
+
+                                                        &lt;a href="#" 
+class="pubcollapse"&gt;
+                                                            &lt;i 
+class="fa fa-expand"&gt;&lt;/i&gt;
+                                                        &lt;/a&gt;
+                                                      
+                                                        &lt;a 
+href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=7163850&amp;tag=1"
+ class="tooltips" title="External link" target="_blank"&gt;
+                                                            &lt;i 
+class="fa fa-external-link"&gt;&lt;/i&gt;
+                                                        &lt;/a&gt;
+                                                          &lt;a 
+href="pdf/isbi_14.pdf" class="tooltips" title="Download" 
+target="_blank"&gt;
+                                                            &lt;i 
+class="fa fa-cloud-download"&gt;&lt;/i&gt;
+                                                        &lt;/a&gt;
+                                                    &lt;/div&gt;
+                                                    &lt;img alt="image" 
+src="img/pubs/isbi_2014.png" align="left" style="height: 110px; width: 
+120px; padding: 0px 10px 10px;"&gt;
+                                                    &lt;h4 
+class="pubtitle"&gt;Automatic Muscle Perimysium Annotation using Deep 
+Convolutional Neural Network.&lt;/h4&gt;
+                                                    &lt;div 
+class="pubauthor"&gt;&lt;strong&gt;Manish Sapkota&lt;/strong&gt;,  
+Fuyong Xing, Hai Su, Lin Yang&lt;/div&gt;
+                                                    &lt;div 
+class="pubcite"&gt;
+                                                        &lt;span 
+class="label label-warning"&gt;Conference Papers&lt;/span&gt; Biomedical
+ Imaging (ISBI), 2015 IEEE 12th International Symposium on, New York, 
+NY, 2015, pp. 205-208 | April 16-19, 2015 | &lt;strong&gt;doi: 
+10.1109/ISBI.2015.7163850&lt;/strong&gt;
+                                                       
+                                                    &lt;/div&gt;
+
+                                                &lt;/div&gt;
+                                                &lt;div 
+class="pubdetails"&gt;
+                                                    &lt;img alt="image" 
+src="img/pubs/isbi_qual_result.png" align="left" style="padding: 0 30px 
+30px 0;"&gt;
+                                                    &lt;p&gt;
+                                                        Diseased 
+skeletal muscle expresses mononuclear cell infiltration in the regions 
+of perimysium. 
+                                                    Accurate annotation 
+or segmentation of perimysium can help biologists and clinicians to 
+determine 
+                                                    individualized 
+patient treatment and allow for reasonable prognostication. However, 
+manual perimysium 
+                                                    annotation is time 
+consuming and prone to inter-observer variations. Meanwhile, the 
+presence of ambiguous
+                                                     patterns in muscle 
+images significantly challenge many traditional automatic annotation 
+algorithms. In this 
+                                                    paper, we propose an
+ automatic perimysium annotation algorithm based on deep convolutional 
+neural network (CNN). 
+                                                    We formulate the 
+automatic annotation of perimysium in muscle images as a pixel-wise 
+classification problem, and 
+                                                    the CNN is trained 
+to label each image pixel with raw RGB values of the patch centered at 
+the pixel. The algorithm 
+                                                    is applied to 82 
+diseased skeletal muscle images. We have achieved an average precision 
+of 94% on the test dataset.
+                                                    &lt;/p&gt;
+                                                    
+
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                                                        
+               
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div id="teaching" class="page"&gt;
+                &lt;div class="pageheader"&gt;
+                    &lt;div class="headercontent"&gt;
+                        &lt;div class="section-container"&gt;
+
+                            &lt;h2 class="title"&gt;Teaching&lt;/h2&gt;
+
+                            &lt;div class="row"&gt;
+                                &lt;div class="col-md-12"&gt;
+                                    &lt;p&gt;I never thought I would be 
+capable of teaching someone and making them understand the concepts in 
+the field of computer science. I slowly and
+                                        progressively grew into loving 
+it. Satisfaction of knowledge sharing is immense and cannot be put in 
+words. My role in teaching so far has been as a
+                                        teaching assistant under 
+guidance of a supervisor.
+                                    &lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="pagecontents"&gt;
+                    &lt;div class="section color-1"&gt;
+                        &lt;div class="section-container"&gt;
+                            &lt;div class="row"&gt;
+                                &lt;div class="title text-center"&gt;
+                                    &lt;h3&gt;Currrent 
+Teaching&lt;/h3&gt;
+                                &lt;/div&gt;
+                                &lt;ul class="ul-dates"&gt;
+                                    &lt;li&gt;
+                                        &lt;div class="dates"&gt;
+                                            
+&lt;span&gt;Spring&lt;/span&gt;
+                                            
+&lt;span&gt;2016&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="content"&gt;
+                                            &lt;h4&gt;Supervised 
+Teaching EEL 6825 (Pattern Recognition) | Supervisor: Dr. Dapeng Oliver 
+Wu, University of Florida&lt;/h4&gt;
+                                            &lt;p&gt;The objective of 
+this course is to impart a working knowledge of several important and 
+widely used pattern recognition topics to the students through a mixture
+ of motivational applications and theory.&lt;/p&gt;
+                                            &lt;p&gt;&lt;em&gt;Primary 
+duties: hold office hours, tutor during office hours, graded assignments
+ and projects, and take substitute lectures&lt;/em&gt;&lt;/p&gt;
+                                        &lt;/div&gt;
+                                    &lt;/li&gt;
+                                   &lt;/ul&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="section color-2"&gt;
+                        &lt;div class="section-container"&gt;
+                            &lt;div class="row"&gt;
+                                &lt;div class="title text-center"&gt;
+                                    &lt;h3&gt;Teaching 
+History&lt;/h3&gt;
+                                &lt;/div&gt;
+                                &lt;ul class="ul-dates-gray"&gt;
+                                    &lt;li&gt;
+                                        &lt;div class="dates"&gt;
+                                            
+&lt;span&gt;Fall&lt;/span&gt;
+                                            
+&lt;span&gt;2015&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="content"&gt;
+                                            &lt;h4&gt;Teaching Assistant
+ BME 3053L (Computer Applications for BME) | Supervisor: Dr. Lin Yang, 
+University of Florida&lt;/h4&gt;
+                                            &lt;p&gt;Matlab and coding 
+introductory course for biomedical engineers.&lt;/p&gt;
+                                            &lt;p&gt;&lt;em&gt;Primary 
+duties: take substitute lectures&lt;/em&gt;&lt;/p&gt;
+                                        &lt;/div&gt;
+                                    &lt;/li&gt;
+                                    &lt;li&gt;
+                                        &lt;div class="dates"&gt;
+                                            
+&lt;span&gt;Spring&lt;/span&gt;
+                                            
+&lt;span&gt;2013&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="content"&gt;
+                                            &lt;h4&gt;Teaching Assistant
+ CS 221 (First Course in Computer Science for Engineers) | Supervisor: 
+Prof. Paul Piwowarski, University of Kentucky&lt;/h4&gt;
+                                            &lt;p&gt;Introduction to 
+coding for engineers with all the backgrounds.&lt;/p&gt;
+                                            &lt;p&gt;&lt;em&gt;Primary 
+duties: led labs with 40 students, tutor in labs, assist in the 
+preparation of all the assignments and exams, and grade 
+them.&lt;/em&gt;&lt;/p&gt;
+                                        &lt;/div&gt;
+                                    &lt;/li&gt;
+                                    &lt;li&gt;
+                                        &lt;div class="dates"&gt;
+                                            
+&lt;span&gt;Fall&lt;/span&gt;
+                                            
+&lt;span&gt;2012&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="content"&gt;
+                                            &lt;h4&gt;Teaching Assistant
+ CS 221 (First Course in Computer Science for Engineers) | Supervisor: 
+Prof. Paul Piwowarski, University of Kentucky&lt;/h4&gt;
+                                            &lt;p&gt;Introduction to 
+coding for engineers with all the backgrounds.&lt;/p&gt;
+                                            &lt;p&gt;&lt;em&gt;Primary 
+duties: led labs with 40 students, tutor in labs, assist in the 
+preparation of all the assignments and exams, and grade 
+them.&lt;/em&gt;&lt;/p&gt;
+                                        &lt;/div&gt;
+                                    &lt;/li&gt;
+                                    &lt;li&gt;
+                                        &lt;div class="dates"&gt;
+                                            
+&lt;span&gt;Spring&lt;/span&gt;
+                                            
+&lt;span&gt;2012&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="content"&gt;
+                                            &lt;h4&gt;Teaching Assistant
+ CS 221 (First Course in Computer Science for Engineers) | Supervisor: 
+Prof. Paul Piwowarski, University of Kentucky&lt;/h4&gt;
+                                            &lt;p&gt;Introduction to 
+coding for engineers with all the backgrounds.&lt;/p&gt;
+                                            &lt;p&gt;&lt;em&gt;Primary 
+duties: led labs with 40 students, tutor in labs, assist in the 
+preparation of all the assignments and exams, and grade 
+them.&lt;/em&gt;&lt;/p&gt;
+                                        &lt;/div&gt;
+                                    &lt;/li&gt;
+                                    &lt;li&gt;
+                                        &lt;div class="dates"&gt;
+                                            
+&lt;span&gt;Fall&lt;/span&gt;
+                                            
+&lt;span&gt;2011&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="content"&gt;
+                                            &lt;h4&gt;Teaching Assistant
+ CS 221 (First Course in Computer Science for Engineers) | Supervisor: 
+Dr. Kenneth L. Calvert, University of Kentucky&lt;/h4&gt;
+                                            &lt;p&gt;Introduction to 
+coding for engineers with all the backgrounds.&lt;/p&gt;
+                                            &lt;p&gt;&lt;em&gt;Primary 
+duties: led labs with 40 students, tutor in labs, assist in the 
+preparation of all the assignments and exams, and grade 
+them.&lt;/em&gt;&lt;/p&gt;
+                                        &lt;/div&gt;
+                                    &lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div id="gallery" class="page"&gt;
+                &lt;div class="pagecontents"&gt;
+
+                    &lt;div class="section color-3" 
+id="gallery-header"&gt;
+                        &lt;div class="section-container"&gt;
+                            &lt;div class="row"&gt;
+                                &lt;div class="col-md-3"&gt;
+                                    &lt;h2&gt;Gallery&lt;/h2&gt;
+                                &lt;/div&gt;
+                                &lt;div class="col-md-9"&gt;
+                                    &lt;p&gt;I take picutures in my 
+spare times. Few of them are posted below. For complete gallery check 
+the url:&lt;/p&gt;
+                                    &lt;p&gt;&lt;a 
+href="https://www.flickr.com/photos/90978584@N02/" 
+target="_blank"&gt;Manish@Flickr&lt;/a&gt;&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="section color-3" 
+id="gallery-large"&gt;
+                        &lt;div class="section-container"&gt;
+
+                            &lt;ul id="grid" class="grid"&gt;
+                                &lt;li&gt;
+                                    &lt;div&gt;
+                                        &lt;img alt="image" 
+src="img/gallery/4.jpg"&gt;
+                                        &lt;a href="img/gallery/4.jpg" 
+class="popup-with-move-anim"&gt;
+                                            &lt;div class="over"&gt;
+                                                &lt;div 
+class="comein"&gt;
+                                                     &lt;h3&gt;BICI2 Lab
+ Members&lt;/h3&gt;
+                                                        &lt;p&gt;I and 
+my lab colleagues in BMES Conference 2015 at Tampa,Florida.&lt;/p&gt;
+                                                    &lt;div 
+class="comein-bg"&gt;&lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/a&gt;
+                                    &lt;/div&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;div&gt;
+                                        &lt;img alt="image" 
+src="img/gallery/1.jpg"&gt;
+                                        &lt;a href="img/gallery/1.jpg" 
+class="popup-with-move-anim"&gt;
+                                            &lt;div class="over"&gt;
+                                                &lt;div 
+class="comein"&gt;
+                                                    &lt;i class="fa 
+fa-search"&gt;&lt;/i&gt;
+                                                    &lt;div 
+class="comein-bg"&gt;&lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/a&gt;
+                                    &lt;/div&gt;
+                                &lt;/li&gt;
+                                
+                               &lt;li&gt;
+                                    &lt;div&gt;
+                                        &lt;img alt="image" 
+src="img/gallery/2.jpg"&gt;
+                                        &lt;a href="img/gallery/2.jpg" 
+class="popup-with-move-anim"&gt;
+                                            &lt;div class="over"&gt;
+                                                &lt;div 
+class="comein"&gt;
+                                                    &lt;i class="fa 
+fa-search"&gt;&lt;/i&gt;
+                                                    &lt;div 
+class="comein-bg"&gt;&lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/a&gt;
+                                    &lt;/div&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;div&gt;
+                                        &lt;img alt="image" 
+src="img/gallery/3.jpg"&gt;
+                                        &lt;a href="img/gallery/3.jpg" 
+class="popup-with-move-anim"&gt;
+                                            &lt;div class="over"&gt;
+                                                &lt;div 
+class="comein"&gt;
+                                                     &lt;i class="fa 
+fa-search"&gt;&lt;/i&gt;
+                                                    &lt;div 
+class="comein-bg"&gt;&lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/a&gt;
+                                    &lt;/div&gt;
+                                &lt;/li&gt;
+                                
+                                 &lt;li&gt;
+                                    &lt;div&gt;
+                                        &lt;img alt="image" 
+src="img/gallery/5.jpg"&gt;
+                                        &lt;a href="img/gallery/5.jpg" 
+class="popup-with-move-anim"&gt;
+                                            &lt;div class="over"&gt;
+                                                &lt;div 
+class="comein"&gt;
+                                                    &lt;i class="fa 
+fa-search"&gt;&lt;/i&gt;
+                                                    &lt;div 
+class="comein-bg"&gt;&lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/a&gt;
+                                    &lt;/div&gt;
+                                &lt;/li&gt;
+
+                            &lt;/ul&gt;
+
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+            &lt;div id="contact" class="page"&gt;
+                &lt;div class="pageheader"&gt;
+                    &lt;div class="headercontent"&gt;
+                        &lt;div class="section-container"&gt;
+
+                            &lt;h2 class="title"&gt;Contact &amp; Meet 
+Me&lt;/h2&gt;
+
+                            &lt;div class="row"&gt;
+                                &lt;div class="col-md-8"&gt;
+                                    &lt;p&gt;I would be happy to talk to
+ you about any of my research or any questions you may have in 
+general.&lt;/p&gt;
+
+                                    &lt;h2 class="title"&gt;&lt;/h2&gt;
+                                    &lt;p&gt;You can find me in my lab 
+located at:&lt;/p&gt;
+                                       &lt;p&gt; &lt;em&gt;350 New 
+Engineering Building,&lt;br/&gt;
+                                        1064 Center Drive,&lt;br/&gt;
+                                        Gainesville, FL, 32611-6130, U. 
+S. A.&lt;br/&gt;&lt;/em&gt;&lt;/p&gt;
+                                    &lt;p&gt;I am usually there every 
+working days from 10:00am until 5:30 pm, but you may consider sending 
+email before stopping by.&lt;/p&gt;
+                                    &lt;p&gt;&lt;/p&gt;
+                                &lt;/div&gt;
+                                &lt;div class="col-md-4"&gt;
+                                    &lt;ul class="list-unstyled"&gt;
+                                        &lt;li&gt;
+                                            &lt;strong&gt;&lt;i 
+class="fa fa-phone"&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp;&lt;/strong&gt;
+                                            &lt;span&gt;lab: 
+352-294-2229&lt;/span&gt;
+                                        &lt;/li&gt;
+                                        &lt;li&gt;
+                                            &lt;strong&gt;&lt;i 
+class="fa fa-envelope"&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp;&lt;/strong&gt;
+                                            &lt;span&gt;msa235 at ufl 
+dot edu&lt;/span&gt;
+                                        &lt;/li&gt;
+                                        &lt;li&gt;
+                                            &lt;strong&gt;&lt;i 
+class="fa fa-envelope"&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp;&lt;/strong&gt;
+                                            &lt;span&gt;manish dot 
+sapkota at gmail dot com&lt;/span&gt;
+                                        &lt;/li&gt;
+                                        &lt;li&gt;
+                                            &lt;strong&gt;&lt;i 
+class="fa 
+fa-linkedin-square"&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp;&lt;/strong&gt;
+                                            &lt;span&gt;&lt;a 
+href="https://www.linkedin.com/in/sapkotam" 
+target="_blank"&gt;https://www.linkedin.com/in/sapkotam&lt;/a&gt;&lt;/span&gt;
+
+                                        &lt;/li&gt;
+                                    &lt;/ul&gt;
+
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="pagecontents"&gt;
+                    &lt;div class="section fixedbg parallax 
+contact-office"&gt;
+                        &lt;div class="section-container"&gt;
+                            &lt;div class="row"&gt;
+                                &lt;div class="col-md-7 col-md-offset-1"
+ style="font-weight:900;color:#000;"&gt;
+                                    &lt;p&gt;&lt;/p&gt;
+                                    
+                                &lt;/div&gt;
+                                &lt;div class="col-md-3 text-center 
+hidden-xs hidden-sm"&gt;
+                                    &lt;i class="fa fa-coffee 
+icon-huge"&gt;&lt;/i&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                   &lt;!-- &lt;div class="section color-1"&gt;
+                        &lt;div class="section-container"&gt;
+                            &lt;div class="row"&gt;
+                                &lt;div class="col-md-7 
+col-md-offset-1"&gt;
+                                    &lt;h2 class="title"&gt;At My 
+Lab&lt;/h2&gt;
+                                    &lt;p&gt;You can find me at my 
+office located at New Engineering Building, in University of 
+Florida.&lt;/p&gt;
+                                    &lt;p&gt;I am usually at my office 
+every day from 10:00am until 5:30 pm, but you may consider sending email
+ before stopping by.&lt;/p&gt;
+                                &lt;/div&gt;
+                                &lt;div class="col-md-3 text-center 
+hidden-xs hidden-sm"&gt;
+                                    &lt;i class="fa fa-superscript 
+icon-huge"&gt;&lt;/i&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;--&gt;
+                   
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div id="overlay"&gt;&lt;/div&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;script&gt;
+  
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new 
+Date();a=s.createElement(o),
+  
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+
+  
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+
+  ga('create', 'UA-75784655-1', 'auto');
+  ga('send', 'pageview');
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</textarea>
+ </td>
+</tr>
+</tbody></table>
+</form>
+
+<script type="text/plain" id="general_encoding_changed_template">
+<p>The system was unable to save your document in “{old_charset}” encoding. Most likely, your document contains characters incompatible with “{old_charset}”.</p>
+
+<p>The system has updated your document to “{new_charset}” encoding. Verify that the file opens correctly in your application.</p>
+
+<p>To learn more about file encoding, visit <a href="http://go.cpanel.net/AboutEncoding">http://go.cpanel.net/AboutEncoding</a>.</p>
+</script>
+
+
+
+<img src="cPanel%20X_files/progress_bar.gif" class="preloadedImage">
+<img src="cPanel%20X_files/check.png" class="preloadedImage">
+
+<script id="cjt_error_dialog_template" type="text/plain">
+<div class="error_notice">{error_html}</div>
+</script>
+
+<script id="cjt_http_error_dialog_template" type="text/plain">
+<div class="error_notice http_error_notice">
+    <div class="http_status">{status}: {status_text_html}</div>
+    <div><a href="javascript:void(0)" class="http_error_details_link">Show/Hide Details</a></div>
+    <div class="cjt_error_details" style="display:none">
+        <div class="url">URL ({method}):<pre>{url_html}</pre></div>
+        <div class="post">Body: <pre>{post_html}</pre></div>
+        <div class="response">Response:<pre>{response_html}</pre></div>
+    </div>
+</div>
+</script>
+
+<script>
+CPANEL.application = "cpaneld";
+YAHOO.lang.augmentObject( CPANEL.Locale.prototype.LEXICON, {"An unknown error occurred.":"An unknown error occurred.","OK":"OK","Processing …":"Processing …","ERROR":"ERROR","Error":"Error","Success!":"Success!","HTTP ERROR":"HTTP ERROR","Notice":"Notice","Cancel":"Cancel","Proceed":"Proceed"} );
+</script>
+<script src="cPanel%20X_files/ajaxapp-min.js"></script>
+
+<script type="text/javascript">
+var CHARSET = document.sform.charset.value;
+
+if ( !window.LEXICON ) LEXICON = {};
+LEXICON.charset_changed = "Character Encoding Change";
+LEXICON.confirm_close   = "You have unsaved changes. Are you certain that you want to close this window?";
+LEXICON.reloading       = "The system is reloading …";
+
+function loadfile(clicked_el) {
+    var textarea = DOM.get("codewindow");
+    if (textarea.value !== textarea.defaultValue) {
+        var sure = confirm(LOCALE.maketext('Are you certain that you want to open a new file? You will lose any unsaved changes.'));
+        if (!sure) { return; }
+    }
+    var filen = document.sform.path.value;
+    var fpath = filen.split('/');;
+    var filename = fpath.pop();
+    var dir = fpath.join('/');
+    var sdir = encodeURIComponent(dir);
+    var sfilename = encodeURIComponent(filename);
+    var charset = document.getElementById('charset').value;
+
+    var pp = new CPANEL.ajax.Progress_Panel( DOM.generateId(), {
+        status_html : "The system is reloading …",
+        effect: CPANEL.ajax.FADE_MODAL
+    } );
+    if (clicked_el) {
+        pp.show_from_source(clicked_el);
+    }
+    else {
+        pp.show();
+    }
+
+    document.location.href="?dir=" + sdir + "&file=" + sfilename + '&file_charset=' + charset;
+}
+
+var LAST_NOTICE = null;
+
+function loadfdata(clicked_el) {
+    var path     = DOM.get("path");
+
+    if ( CODEWINDOW.value === CODEWINDOW.defaultValue && path.value === path.defaultValue ) {
+        LAST_NOTICE = new CPANEL.ajax.Dynamic_Notice({content:"You have made no changes to save.", level:"info", replaces:LAST_NOTICE});
+        return;
+    }
+
+    var match = path.value.match(/^(.+)\/([^\/]+)$/);
+    if ( !match ) {
+        LAST_NOTICE = new CPANEL.ajax.Dynamic_Notice({content:"You have entered an invalid path.", level:"error", replaces:LAST_NOTICE});
+        return;
+    }
+
+    var api_params = {
+        module:   "Fileman",
+        func:     "savefile",
+        data:     {
+            dir:           match[1],
+            filename:      match[2],
+            content:       window.editAreaLoader ? editAreaLoader.getValue("codewindow") : document.sform.page.value,
+            utf8_fallback: 1,
+            charset:       CHARSET
+        },
+        progress_panel: {
+            zIndex:      2500,
+            show_status: true,
+            source_el:   clicked_el,
+            status_html: "The system is saving “{the_file}” …".replace('{the_file}',match[2].html_encode()),
+            success_notice_options: { replaces:LAST_NOTICE },
+            before_success: function(result) {
+                CODEWINDOW.defaultValue = CODEWINDOW.value;
+
+                return check_for_encoding_change.call(
+                    this,
+                    CPANEL.ajax.templates.general_encoding_changed_template,
+                    result.cpanel_data
+                );
+            }
+        },
+        callback: {
+            success: function() { LAST_NOTICE = req.notice }
+        }
+    };
+
+    var req = CPANEL.api( api_params );
+
+    return false;
+}
+</script>
+
+<script type="text/javascript" src="cPanel%20X_files/edit_area_full.js"></script>
+<script type="text/javascript" src="cPanel%20X_files/edit_area_resizer.js"></script>
+<script>
+var editAreaEl='codewindow';
+var lastResizeTime=0;
+var lastResizeRequestTime=0;
+
+function unhide_codewindow() {
+    DOM.setStyle("codewindow","visibility","");
+    if ( YAHOO.env.ua.ie ) fix_ie_margin();
+    set_link_for_code();
+};
+
+var EditArea_config = {
+
+    display: "later",
+    EA_load_callback: "set_link_for_code",
+
+    EA_toggle_on_callback: "set_link_for_code",
+    EA_toggle_off_callback: "set_link_for_text",
+    id: editAreaEl,
+    start_highlight: true,
+    allow_resize: "both",
+    allow_toggle: false,
+    language: "en",
+    toolbar: "search, go_to_line, |, undo, redo, |, select_font, |, syntax_selection, |, change_smooth_selection, highlight, reset_highlight, word_wrap, |, help",
+    syntax: "html",
+    word_wrap: true
+};
+
+function load_EditArea() {
+    //Set the code textarea width to 800px temporarily
+    //so EditArea will size the edit area to that width.
+    //This mimicks behavior of the old separate editit_code.html.
+    if ( !CODEWINDOW) CODEWINDOW = DOM.get(editAreaEl);
+    CODEWINDOW.style.visibility = "";
+    CODEWINDOW.style.width = "800px";
+
+    editAreaLoader.init(EditArea_config);
+
+
+    textarea_sizer();
+
+}
+
+function fix_ie_margin() {
+    //work around a bug in EditArea that sets a marginTop when it shouldn't.
+    //The EA code has an exception for IE>7, but it kills detecting IE>7 early
+    //on presuming that it will be able to force IE7 compatibility mode.
+    //(Which it can't always do, actually.)
+    if ( YAHOO.env.ua.ie > 7 ) {
+        var iframe_window = DOM.get("frame_codewindow");
+        iframe_window.contentDocument.getElementById("textarea").style.marginTop = "";
+    }
+}
+
+function set_link_for_code() {
+    DOM.get("switch_editor_control").innerHTML = "<img width=\"16\" src=\""+editor_icons.text+"\" /> Switch to Text Editor";
+    if ( YAHOO.env.ua.ie ) fix_ie_margin();
+    window.ea_shown = true;
+}
+function set_link_for_text() {
+    DOM.get("switch_editor_control").innerHTML = "<img width=\"16\" src=\""+editor_icons.code+"\" /> Switch to Code Editor";
+}
+
+function toggle_EditArea(link) {
+    var ea = editAreas[editAreaEl];
+
+    if (!ea || !ea.displayed) {
+
+        if ( !window.ea_shown ) {
+            CODEWINDOW.style.visibility = "";
+            CODEWINDOW.style.width = "800px";
+        }
+
+        editAreaLoader.toggle_on(editAreaEl);
+        doResizeSoon();
+        EVENT.removeListener( window, "resize", textarea_sizer );
+        EVENT.addListener( window, "resize", doResizeSoon );
+    }
+    else {
+        editAreaLoader.toggle_off(editAreaEl);
+        CODEWINDOW.wrap = "soft";
+        EVENT.removeListener( window, "resize", doResizeSoon );
+        EVENT.addListener( window, "resize", textarea_sizer );
+        textarea_sizer();
+    }
+}
+
+var CODEWINDOW;
+var codewindow_padding = YAHOO.env.ua.ie ? 3 : 0;
+function textarea_sizer() {
+    var pos = DOM.getXY(CODEWINDOW);
+    var viewport_height = DOM.getViewportHeight();
+    var viewport_width  = DOM.getViewportWidth();
+    CODEWINDOW.style.width  = (viewport_width  - pos[0] - codewindow_padding) + "px";
+    CODEWINDOW.style.height = (viewport_height - pos[1] - codewindow_padding) + "px";
+}
+
+var editor_icons = {
+    code: "/cPanel_magic_revision_1181099262/frontend/bluehost/filemanager/img/icons/codeEditorB.gif",
+    text: "/cPanel_magic_revision_1181099262/frontend/bluehost/filemanager/img/icons/Document 2 Edit 2.gif"
+};
+
+EVENT.throwErrors = true;
+EVENT.onDOMReady( function() {
+    CODEWINDOW = DOM.get(editAreaEl);
+    var img = document.createElement("img");
+    img.style.display = "none";
+
+    img.src = editor_icons.text;
+    EVENT.addListener( window, "resize", textarea_sizer );
+
+    document.body.appendChild(img);
+} );
+
+YAHOO.util.Event.addListener(window, "load", load_EditArea);
+//YAHOO.util.Event.addListener(window, "load", textarea_sizer);
+</script>
+
+
+
+
+<img src="cPanel%20X_files/Document%25202%2520Edit%25202.gif" style="display: none;"></body></html>
+<!-- cPanel [11.52] (pro,attracta) Copyright (c) 2015 cPanel, Inc. Licensed on box691.bluehost.com -->
